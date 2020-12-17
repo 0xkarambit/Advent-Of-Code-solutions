@@ -29,3 +29,5 @@ exec(command, (err, out, stderr)=>{
 	// reading code
 	// const input = await (promises.readFile(filename, "utf8")).toString();
 })
+
+//TODO improve this script so that it also makes day${day}.js file with starting code.
