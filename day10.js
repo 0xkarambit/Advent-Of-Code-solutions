@@ -2,7 +2,7 @@
 // today i solved day8 part2, day9 , day10
 
 const { count } = require("console");
-const { diffieHellman } = require("crypto");
+// const { diffieHellman } = require("crypto");
 const { readFileSync } = require("fs");
 const log = console.log;
 
@@ -49,16 +49,6 @@ const diff = {
 	"3":0
 }
 
-function sort(prevHighest, adaptersLeft, eligible, sortedAdapters) {
-	// eligible = adaptersLeft.filter(plugsIn);
-	for (let i = 0; i < 3; i++) {
-		adaptersLeft[i]
-	}
-	while (eligible) {
-		sortedAdapters.push(eligible.shift());
-	}
-}
-
 function plugsIn(adapter_joltage, base_jolt = outlet_joltage) {
 	return Object.keys(diff).map(Number).filter( (diff) => {
 		if (diff + base_jolt == adapter_joltage) {
@@ -101,4 +91,3 @@ log(diff['1'] * diff['3']);
 // wait is this a combinations case .. ?
 
 let arrangements = [];
-

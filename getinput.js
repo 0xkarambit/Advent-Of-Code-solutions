@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const {exec} = require("child_process");
-const {promises} = require("fs");
+const {promises, readFileSync} = require("fs");
 const {stderr, stdout} = process;
 const log = console.log;
 
@@ -12,7 +12,7 @@ if (!day) {
 	process.exit();
 }
 
-const cookie = "53616c7465645f5f37223573e57a1a404e4924262ffc7d81038c0d213040f41ee0f48637b542c64f4a812637a445f200";
+const cookie = readFileSync('session_cookie', "utf8");
 // wait i logged in again and did my cookie change ? no some change in backend ? idk..lets check
 const url = `https://adventofcode.com/${year}/day/${day}/input`;
 const command = `curl ${url} --cookie "session=${cookie}"`;
